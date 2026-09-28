@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>✈️ Travel Agent</h1>
+        <p>Plan your journey and calculate your estimated fuel cost.</p>
+
+        <form action="/plan" method="POST">
+
+            <label>Current Location</label>
+            <input
+                type="text"
+                name="current_location"
+                placeholder="e.g. Karimnagar"
+                required
+            >
+
+            <label>Destination</label>
+            <input
+                type="text"
+                name="destination"
+                placeholder="e.g. Tirupati"
+                required
+            >
+
+            <label>Vehicle Type</label>
+            <select name="vehicle" required>
+                <option value="Car">Car</option>
+                <option value="Bike">Bike</option>
+            </select>
+
+            <label>Petrol Price (₹/litre)</label>
+            <input
+                type="number"
+                name="petrol_price"
+                step="0.01"
+                placeholder="e.g. 105"
+                required
+            >
+
+            <label>Vehicle Mileage (km/litre)</label>
+            <input
+                type="number"
+                name="mileage"
+                step="0.1"
+                placeholder="e.g. 16.3"
+                required
+            >
+
+            <button type="submit">
+                🗺️ Calculate Route & Fuel Cost
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
